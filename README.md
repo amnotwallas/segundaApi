@@ -93,7 +93,7 @@ http://localhost:8080/api/users/update/1/JuanActualizado/30/juan_actualizado@mai
 
 ### ❌ Eliminar usuario (DELETE)
 ```
-DELETE http://localhost:8080/api/users/delete/1
+http://localhost:8080/api/users/delete/1
 ```
 
 ---
