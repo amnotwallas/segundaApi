@@ -66,32 +66,32 @@ src/main/java/com/notwallas/segundaApi/
 🧪 **Pruebas con Postman**
 ---------------------------
 
-### 🔄 Verificar la API
+### 🔄 Verificar la API (GET)
 ```
-GET http://localhost:8080/api/users/ping
-```
-
-### ➕ Crear usuario
-```
-POST http://localhost:8080/api/users/create/Juan/25/juan@mail.com/1234/Ingenieria
+http://localhost:8080/api/users/ping
 ```
 
-### 📋 Obtener todos los usuarios
+### ➕ Crear usuario (POST)
 ```
-GET http://localhost:8080/api/users/getAll
-```
-
-### 🔍 Obtener usuario por ID
-```
-GET http://localhost:8080/api/users/get/1
+http://localhost:8080/api/users/create/Juan/25/juan@mail.com/1234/Ingenieria
 ```
 
-### ✏️ Actualizar usuario
+### 📋 Obtener todos los usuarios (GET)
 ```
-PUT http://localhost:8080/api/users/update/1/JuanActualizado/30/juan_actualizado@mail.com/claveNueva/Arquitectura
+http://localhost:8080/api/users/getAll
 ```
 
-### ❌ Eliminar usuario
+### 🔍 Obtener usuario por ID (GET)
+```
+http://localhost:8080/api/users/get/1
+```
+
+### ✏️ Actualizar usuario (PUT)
+```
+http://localhost:8080/api/users/update/1/JuanActualizado/30/juan_actualizado@mail.com/claveNueva/Arquitectura
+```
+
+### ❌ Eliminar usuario (DELETE)
 ```
 DELETE http://localhost:8080/api/users/delete/1
 ```
