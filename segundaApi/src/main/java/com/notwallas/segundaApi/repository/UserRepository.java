@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserRepository {
     // Lista privada para almacenar los usuarios en memoria
-    private static List<User> users = new ArrayList<>();
+    private final List<User> users = new ArrayList<>();
 
 
     public void saveUser(User user) {
