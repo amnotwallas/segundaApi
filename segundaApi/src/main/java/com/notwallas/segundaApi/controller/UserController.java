@@ -16,12 +16,24 @@ public class UserController {
     public UserController(UserRepository userRepository) {
         this.userService = new UserService(userRepository);
     }
-
+    /**
+     * Endpoint to check if the API is running.
+     * @return a simple string message.
+     */
     @GetMapping("/ping")
     public String ping() {
         return "API funcionando!";
     }
 
+    /**
+     * * Endpoint for creating a user.
+     * @param edad its the age of the user.
+     * @param nombre its the name of the user.
+     * @param email its the email of the user.
+     * @param password its the password of the user.
+     * @param carrera its the career of the user.
+     * @return a string with the user details.
+     **/
     @PostMapping("/create/{nombre}/{edad}/{email}/{password}/{carrera}")
     public String createUser(@PathVariable String nombre,
                              @PathVariable int edad,
@@ -37,11 +49,20 @@ public class UserController {
                 "Carrera: " + user.getCarrer();
     }
 
+    /**
+     * Endpoint to get all users.
+     * @return a string with all users.
+     */
     @GetMapping("/getAll")
     public String getAllUsers() {
         return userService.GetAllUsers();
     }
 
+    /**
+     * Endpoint to get a user by ID.
+     * @param id the ID of the user.
+     * @return a string with the user details or an error message.
+     */
     @GetMapping("/get/{id}")
     public String getUserById(@PathVariable int id) {
         User user = userService.GetUserById(id);
@@ -52,6 +73,16 @@ public class UserController {
         }
     }
 
+    /**
+     * Endpoint to update a user by ID.
+     * @param id the ID of the user.
+     * @param name the new name of the user.
+     * @param age the new age of the user.
+     * @param email the new email of the user.
+     * @param password the new password of the user.
+     * @param carrer the new career of the user.
+     * @return a string with a success message or an error message.
+     */
     @PutMapping("/update/{id}/{name}/{age}/{email}/{password}/{carrer}")
     public String updateUser(@PathVariable int id,
                              @PathVariable String name,
@@ -63,6 +94,11 @@ public class UserController {
         return updated ? "Usuario actualizado correctamente." : "Usuario con ID " + id + " no encontrado.";
     }
 
+    /**
+     * Endpoint to delete a user by ID.
+     * @param id the ID of the user to delete.
+     * @return a string with a success message.
+     */
     @DeleteMapping("/delete/{id}")
     public String deleteUser(@PathVariable int id) {
         userService.DeleteUser(id);
